@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %}{% endblock head_title %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        footer {
+            position: fixed !important;
+            bottom: 0 !important;
+            width: 100%;
+        }
+    </style
+</head>
+<body class="bg-indigo-600">
+    {% include "navbar.html" %}
+    <div class="lg:container lg:mx-auto" id="main">
+        {% include "message.html" %}
+        {% block content %}{% endblock content %}
+    </div>
+    {% include "footer.html" %}
+</body>
+</html>

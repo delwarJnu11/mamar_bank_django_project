@@ -1,0 +1,13 @@
+{% load humanize %}
+<h4>Hello, {{user.first_name}} {{user.last_name}}</h4>
+{% if type == 'Deposite' or type == 'Withdrawal' %}
+    <p>your account is requested for {{type}} {{ amount|floatformat:2|intcomma }} tk successfully done. After {{type}} your current balance is {{user.account.balance|floatformat:2|intcomma }} tk.</p>
+{% elif type == 'Loan' %}
+    <p>you requested for {{type}} {{ amount|floatformat:2|intcomma }} tk is successdully send to the admin. After approved your {{type}} you will be notified via mail. Wait for our confirmation mail.</p>
+{% elif type == 'Loan Approval' %}
+    <h3>Congratulations...!!! your loan request has been Approved </h3>
+    <p>you requested for loan {{ amount|floatformat:2|intcomma }} tk is successdully approved by admin. After approved your loan your current balance is {{user.account.balance|floatformat:2|intcomma }} tk.</p>
+{% endif %}
+
+<p>Thanks for banking with us</p>
+<p>Mamar Bank</p>
