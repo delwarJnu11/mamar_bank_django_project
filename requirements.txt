@@ -1,4 +1,6 @@
 asgiref
+certifi
+charset-normalizer
 crispy-bootstrap5
 crispy-tailwind
 distlib
@@ -7,14 +9,17 @@ django-appconf
 django-compressor
 django-crispy-forms
 django-environ
+docopt
 EasyProcess
 entrypoint2
 filelock
+idna
 MouseInfo
 mss
 numpy
 opencv-contrib-python
-Pillow.1
+Pillow
+pipreqs
 platformdirs
 psycopg2
 PyAutoGUI
@@ -26,8 +31,11 @@ pyscreenshot
 PyScreeze
 pytweening
 rcssmin
+requests
 rjsmin
 sqlparse
 sweetify
 tzdata
+urllib3
 virtualenv
+yarg
