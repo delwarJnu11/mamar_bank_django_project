@@ -11,12 +11,32 @@
             bottom: 0 !important;
             width: 100%;
         }
-    </style
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function showSuccessAlert(message,msgType) {
+                console.log(msgType)
+                console.log( typeof msgType)
+                Swal.fire({
+                    icon: msgType === "success" ? "success": "error",
+                    title: msgType === "success" ? "Success!": "Oops..",
+                    text: message,
+                    timer: 2000,
+                })
+            }
+
+            {% if messages %}
+                {% for message in messages %}
+                    showSuccessAlert("{{ message }}" , "{{ message.tags }}");
+                {% endfor %}
+            {% endif %}
+        });
+    </script>
 </head>
 <body class="bg-indigo-600">
     {% include "navbar.html" %}
     <div class="lg:container lg:mx-auto" id="main">
-        {% include "message.html" %}
         {% block content %}{% endblock content %}
     </div>
     {% include "footer.html" %}

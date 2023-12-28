@@ -11,9 +11,9 @@ class UserBankAccount(models.Model):
     balance = models.DecimalField(default=0, max_digits=12, decimal_places = 2)
     birth_date = models.DateField()
     account_created_at = models.DateField(auto_now_add = True)
-
+    is_bankrupt = models.BooleanField(default=False)
     def __str__(self):
-        return f'{self.user.username} - {str(self.account_no)}'
+        return str(self.account_no)
 
 class UserAddress(models.Model):
     user = models.OneToOneField(User, related_name='address', on_delete=models.CASCADE)

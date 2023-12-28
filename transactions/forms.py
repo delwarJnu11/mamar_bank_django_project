@@ -52,3 +52,7 @@ class LoanRequestForm(TransactionForm):
         if balance * balance <= loan_amount:
             raise forms.ValidationError(f'you can not loan {loan_amount} tk due to your current balance is {balance} tk. you can loan at most {balance*balance} tk.')
         return loan_amount
+
+class TransferMoneyForm(forms.Form):
+    account_no = forms.IntegerField(widget=forms.NumberInput)
+    amount = forms.IntegerField(min_value=100, widget=forms.NumberInput)

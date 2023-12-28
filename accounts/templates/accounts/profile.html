@@ -24,6 +24,7 @@ Banking System
 </div>
 {% endfor %} {% endif %}
 <div class="bg-white px-3 py-4 rounded-xl my-6">
+  <h4 class="font-bold text-3xl text-left pb-5">Account NO: {{request.user.account.account_no}}</h4>
   <h1 class="font-bold text-3xl text-center pb-5">Update Profile Information</h1>
   <div class="w-full mt-10">
     <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -202,13 +203,19 @@ Banking System
           {% endfor %} {% endif %}
         </div>
       </div>
-      <div class="flex items-center justify-between">
+      <div class="flex items-center">
         <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
         >
           Update
         </button>
+        <a
+        href="{% url "password_change" %}"
+          class="bg-red-500 hover:bg-red-700 text-white font-bold mx-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Change Password
+        </a>
       </div>
     </form>
   </div>

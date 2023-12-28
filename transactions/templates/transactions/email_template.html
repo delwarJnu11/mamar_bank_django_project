@@ -7,6 +7,14 @@
 {% elif type == 'Loan Approval' %}
     <h3>Congratulations...!!! your loan request has been Approved </h3>
     <p>you requested for loan {{ amount|floatformat:2|intcomma }} tk is successdully approved by admin. After approved your loan your current balance is {{user.account.balance|floatformat:2|intcomma }} tk.</p>
+{% elif type == 'send money' %}
+    <p>you have send {{ amount|floatformat:2|intcomma }} tk. After send {{ amount|floatformat:2|intcomma }} tk your current balance is {{user.account.balance|floatformat:2|intcomma }} tk.</p>
+{% elif type == 'receive money' %}
+    <h3>Congratulations...!!! your have been received {{ amount|floatformat:2|intcomma }} tk.</h3>
+    <p>After received money your current balance is {{user.account.balance|floatformat:2|intcomma }} tk. stay happy!!!</p>
+{% elif type == 'pass_change' %}
+    <h3>Congratulations...!!! your have successdully changed your password</h3>
+    <p>Please keep your password secure. do not share your password with others. stay happy!!!</p>
 {% endif %}
 
 <p>Thanks for banking with us</p>
